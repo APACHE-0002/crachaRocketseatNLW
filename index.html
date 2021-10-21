@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     
@@ -23,8 +22,8 @@
                 <img src="http://lorempixel.com/185/185/people/" alt="Foto Pessoal" />
             </div>
 
-            <h1>Mayk Brito</h1>
-            <a href="https://instagram.com">
+            <h1 id="userName">Mayk Brito</h1>
+            <a href="https://github.com" target="_blank">
                 <img src="images/github.svg" alt="Icone Github" />
                 seu mark
             </a>
@@ -34,23 +33,23 @@
                 An instructor focused on helping pople start programming for web
             </p>
 
-            <ul>
-                <li>
+            <ul id="socialLinks">
+                <li class="youtube">
                     <a href="youtube.com" target="_blank">
                         <img src="images/youtube.svg" alt="logo youtube"  />
                     </a>
                 </li>
-                <li>
+                <li class="facebook">
                     <a href="facebook.com" target="_blank">
                         <img src="images/facebook.svg" alt="logo facebook" />
                     </a>
                 </li>
-                <li>
+                <li class="instagram">
                     <a href="instagram.com" target="_blank">
                         <img src="images/instagram.svg" alt="logo instagram" />
                     </a>
                 </li>
-                <li>
+                <li class="twitter">
                     <a href="twitter.com" target="_blank">
                         <img src="images/twitter.svg" alt="logo twitter" />
                     </a>
@@ -62,6 +61,32 @@
     
 
 
-    
+    <script>
+        const linksSocialMedia = {
+            github: 'churrasco',
+            youtube: 'churrasco',
+            facebook: 'churrasco',
+            instagram: 'churrasco',
+            twitter: 'churrasco'
+        }
+
+
+        function changeSocialMediaLinks(){
+            //const userName = document.getElementById('userName'); ou 
+            //for ira fazer um map dentro das lis contidas no ul socialLinks     
+            for(let li of socialLinks.children){
+                //no loop ira pegar o li em questao, e verificar a class que esta nele
+                const social = li.getAttribute('class');
+
+                //em cada li, pega o children[0], filho na primeira posiçao, 
+                //que no caso é um link <a>, ira pegar seu href
+                li.children[0].href = `https://www.${social}.com/${linksSocialMedia[social]}`
+            }
+
+        }
+
+        changeSocialMediaLinks();
+
+    </script>
 </body>
 </html>
