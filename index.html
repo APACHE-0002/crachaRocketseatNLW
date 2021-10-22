@@ -19,18 +19,19 @@
                 <span>
                     <img src="images/build.svg" alt="Selo Rocketseat" />
                 </span>
-                <img src="http://lorempixel.com/185/185/people/" alt="Foto Pessoal" />
+               <img id="userPic" src="http://lorempixel.com/185/185/people/" alt="Foto Pessoal" /> 
+               <!-- <img src="images/ad.png" alt="Foto Pessoal" />-->
             </div>
 
             <h1 id="userName">Mayk Brito</h1>
-            <a href="https://github.com" target="_blank">
+            <a id="userLink" href="https://github.com" target="_blank">
                 <img src="images/github.svg" alt="Icone Github" />
-                seu mark
+                <span id="userLogin">github</span>
             </a>
 
 
-            <p>
-                An instructor focused on helping pople start programming for web
+            <p id="bio">
+                Um Dev que gosta de animação.
             </p>
 
             <ul id="socialLinks">
@@ -56,37 +57,15 @@
                 </li>
             </ul>
         </div>
-
     </main>
+    <ul class="squares"></ul>
     
 
-
-    <script>
-        const linksSocialMedia = {
-            github: 'churrasco',
-            youtube: 'churrasco',
-            facebook: 'churrasco',
-            instagram: 'churrasco',
-            twitter: 'churrasco'
-        }
+    <script src="script.js"></script>
 
 
-        function changeSocialMediaLinks(){
-            //const userName = document.getElementById('userName'); ou 
-            //for ira fazer um map dentro das lis contidas no ul socialLinks     
-            for(let li of socialLinks.children){
-                //no loop ira pegar o li em questao, e verificar a class que esta nele
-                const social = li.getAttribute('class');
+    <script src="main.js"></script>
 
-                //em cada li, pega o children[0], filho na primeira posiçao, 
-                //que no caso é um link <a>, ira pegar seu href
-                li.children[0].href = `https://www.${social}.com/${linksSocialMedia[social]}`
-            }
 
-        }
-
-        changeSocialMediaLinks();
-
-    </script>
 </body>
 </html>
